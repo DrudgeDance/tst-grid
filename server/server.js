@@ -1,6 +1,6 @@
 const http = require('node:http');
-// const { resolve } = require('path');
-// const fs = require('fs');
+const path = require('path');
+const fs = require('fs');
 const path = require('path');
 
 const port = 9000;
