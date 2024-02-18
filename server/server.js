@@ -1,7 +1,6 @@
 const http = require('node:http');
 const path = require('path');
 const fs = require('fs');
-const path = require('path');
 
 const port = 9000;
 const hostname = '127.0.0.1';
@@ -9,6 +8,17 @@ const hostname = '127.0.0.1';
 const server = 
 http.createServer((req, res) => {
 
+
+
+
+
+
+
+    
+    console.log(req.method);
+    console.log(req.url);
+
+    console.log(req)
     console.log("Hello server"); 
 
 });
@@ -19,3 +29,6 @@ server.listen(port, hostname, () =>
 });
 
 module.export = server;
+
+
+function 
