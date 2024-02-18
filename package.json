@@ -1,10 +1,11 @@
 {
   "name": "bigintgrid",
-  "version": "1.0.0",
+  "version": "0.0.1-2024.02",
   "description": "NxN grid using BigInt for keys of a MAP object.  MAP object contains refernces to regular objects.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon server/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/DrudgeDance/tst-grid/issues"
   },
-  "homepage": "https://github.com/DrudgeDance/tst-grid#readme"
+  "homepage": "https://github.com/DrudgeDance/tst-grid#readme",
+  "dependencies": {
+    "node": "^21.6.2"
+  }
 }
