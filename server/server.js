@@ -6,7 +6,7 @@ import fs from 'fs';
 const port = 9000;
 const hostname = '127.0.0.1';
 
-import { reRow, reCol} from './grid/Grid.js';
+import { reRow, reCol} from './grid2D/grid2D.js';
 
 const server = 
 http.createServer((req, res) => {

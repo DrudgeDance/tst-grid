@@ -6,7 +6,7 @@
                     1.  KEY of BigInt
                     2.  Value of Object 
                     3.  Each object has a key-value pair of id: key (KEY of MAP)
-
+          Note:  Returning a string GENERALLY implies an error to be read.
 */
 
 
@@ -108,16 +108,20 @@ function genMap(N, ... args){
 
     if ( !(N === inSum)){
         return 'Error: genMap did not proceed with tile generation (N != sum of args).'
-    } else if ( !(N%args.length === 0) ){
+    } 
+    else if ( !(N%args.length === 0) ){
         return 'Error: genMap not divisible by number of args.  Space usage not maximized.'
+    } 
+    else if ( args.length == 1){
+
+
     }
+    else if ( args.length == 2){    // When args === 2, then create an X by Y tilemap
 
-    // When args === 2, then create an X by Y tilemap
+    }
+    else if ( args.length > 2){    // When args > 2, then create an X by Y by Z (height) tilemap
 
-
-
-    // When args > 2, then create an X by Y by Z (height) tilemap
-
+    }
 
 
 
