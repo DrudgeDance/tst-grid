@@ -19,17 +19,9 @@ http.createServer((req, res) => {
      // }
 
     // const a = BigIn()
-    let bin = 0b1111
-    const bitlength = bin.toString(2).length
-    const rightHalf=0;
-    const leftHalf=0;
-    bin+=2
-    let half = Math.floor(bitlength/2);
-    let mask = (1 << half) - 1
-    console.log(`Mask: ${mask.toString(2)}`)
-    console.log( (bin & mask) )
 
-    console.log(typeof bin, bin)
+
+    reCol();
 
     // console.log(req.method);
     // console.log(req.url);
