@@ -23,14 +23,12 @@ function reCol(BigIn=0, debug = true){
     const bin = 0b1111;                        // connect to Parameters later
 
     const bitlength = bin.toString(2).length;
-    const half = Math.floor(bitlength/2);
-    const mask = (1 << half) - 1;
+    const bithalf = Math.floor(bitlength/2);
+    const bitmask = (1 << bithalf) - 1;
 
-    const column = BigInt(bin & mask); 
-    const maxBig = (BigInt(2)**BigInt(half)-BigInt(1))
-    // console.log("maxBig", maxBig.toString(2))
+    const column = BigInt(bin & bitmask); 
 
-    if( column <= maxBig ){   // double checking if column is 1/2 of length of number, using the binary length
+    if( column <= BigInt(2)**BigInt(bithalf)-BigInt(1) ){   // double checking if column is 1/2 of length of number, using the binary length
 
         if( debug == true ){
             console.log(`==================================`)
