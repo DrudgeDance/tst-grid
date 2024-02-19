@@ -1,3 +1,5 @@
+import { reRow, reCol} from './grid/gris.js';
+
 const http = require('node:http');
 const path = require('path');
 const fs = require('fs');
