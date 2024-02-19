@@ -61,7 +61,7 @@ function reCol(BigIn=0, debug = true){
     const bithalf = Math.floor(bitlength/2);
     const bitmask = (1 << bithalf) - 1;
 
-    const column = BigInt(binNo & bitmask); 
+    const column = toCol & BigInt(bitmask);
     console.log('column', column.toString(2).padStart(bithalf,'0'))
 
     if( column <= BigInt(2)**BigInt(bithalf)-BigInt(1) ){   // double checking if column is 1/2 of length of number, using the binary length
