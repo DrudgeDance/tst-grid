@@ -26,5 +26,6 @@
   "homepage": "https://github.com/DrudgeDance/tst-grid#readme",
   "dependencies": {
     "node": "^21.6.2"
-  }
+  },
+  "type": "module"
 }

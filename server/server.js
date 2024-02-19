@@ -1,11 +1,12 @@
-import { reRow, reCol} from './grid/gris.js';
 
-const http = require('node:http');
-const path = require('path');
-const fs = require('fs');
+import http from 'http';
+import path from 'path';
+import fs from 'fs';
 
 const port = 9000;
 const hostname = '127.0.0.1';
+
+import { reRow, reCol} from './grid/grid.js';
 
 const server = 
 http.createServer((req, res) => {
@@ -15,7 +16,7 @@ http.createServer((req, res) => {
     // function grid(n){
 
 
-    // }
+     // }
 
     // const a = BigIn()
     let bin = 0b1111
@@ -43,6 +44,6 @@ server.listen(port, hostname, () =>
     console.log(`Server running at http://${hostname}:${port}/`);
 });
 
-module.export = server;
+export default server;
 
 

@@ -17,4 +17,4 @@ function reCol(BigIn=0){
 
 
 
-export { reRow, reCol};
+export { reRow, reCol };
