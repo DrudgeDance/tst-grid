@@ -20,7 +20,7 @@ http.createServer((req, res) => {
 
     // const a = BigIn()
 
-
+    reRow();
     reCol();
 
     // console.log(req.method);
