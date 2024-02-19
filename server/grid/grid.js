@@ -16,7 +16,7 @@ function reRow(BigIn=0, debug = true){
 
     const leftHalf=0;
 
-    const toRow = BigInt(0b110011);
+    const toRow = BigInt(0b11011011);
 
     const bitlength = toRow.toString(2).length;  
     const bitshift = Math.floor(bitlength/2);        // dynamic bitmask generation for 1/2 of length of parameter (future)
@@ -54,7 +54,7 @@ function reRow(BigIn=0, debug = true){
 function reCol(BigIn=0, debug = true){
 
     const rightHalf=0;                           // connect to Parameters later
-    const toCol = BigInt(0b110011) 
+    const toCol = BigInt(0b11011011); 
     const binNo = toCol.toString(2);             // connect to Parameters later
 
     const bitlength = toCol.toString(2).length;  // dynamic bitmask generation for 1/2 of length of parameter (future)
