@@ -94,7 +94,12 @@ function reCol(BigIn=0, debug = true){
 //     return BigInt(0b0111)     // Should return a BigInt that ix RxC where the length of R and C in string are equivalent
 // }
 
-function genMap(){           // No Parameter
+function genMap(){           // N should be the parameter - for size of grid
+                             // For 2D, N bits should be (XbyY):
+                                  //  Square:  NxN
+                                  //  Rectangular: (N-a)x(N-b)
+                             // For 2D w/ a heightmap (3D): 
+                                  //  Rectangular: (N-a)x(N-b)x(N-c) where a is X, b is Y, and C is heightmap
 
     return 'Returns a Map'    // Should return a Map using genId's for keys
 }
@@ -107,7 +112,7 @@ function genIds(){
 }
 
 
-function genObj(){           // shoudl take BigInt as a parameter
+function genObj(){           // should take BigInt as a parameter
 
     return 'Returns an object with an id'    // Should return a Map using genId's for keys
 }
