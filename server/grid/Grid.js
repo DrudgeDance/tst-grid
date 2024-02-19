@@ -21,18 +21,18 @@ function reRow(BigIn=0, debug = true){
     const bitlength = toRow.toString(2).length;  
     const bitshift = Math.floor(bitlength/2);        // dynamic bitmask generation for 1/2 of length of parameter (future)
     
-    const row = toRow >> BigInt(bitshift);
+    const outRow = toRow >> BigInt(bitshift);
 
-    console.log('row',row.toString(2).padStart(bitshift,'0'))
+    console.log('row',outRow.toString(2).padStart(bitshift,'0'))
 
-    if( row <= BigInt(2)**BigInt(bitshift)-BigInt(1) ){   // double checking if column is 1/2 of length of number, using the binary length
+    if( outRow <= BigInt(2)**BigInt(bitshift)-BigInt(1) ){   // double checking if column is 1/2 of length of number, using the binary length
 
         if( debug == true ){
             console.log(`==================================`);
             console.log(`reRow DEBUG: row WITHIN bounds`);
             console.log(`==================================`);
         }
-        return row;
+        return outRow;
 
     }else {
 
@@ -41,7 +41,7 @@ function reRow(BigIn=0, debug = true){
         console.log(`==================================`);
         console.log(`reRow DEBUG: Original: ${toRow.toString(2)}`);
         console.log(`reRow DEBUG: theShift: ${bitShift}`);
-        console.log(`reRow DEBUG: appShift: ${row.toString(2).padStart(bitshift,'0')} `);
+        console.log(`reRow DEBUG: appShift: ${outRow.toString(2).padStart(bitshift,'0')} `);
         console.log(`reRow DEBUG: ${typeof toRow}, ${toRow}`);   
 
     };
@@ -54,17 +54,17 @@ function reRow(BigIn=0, debug = true){
 function reCol(BigIn=0, debug = true){
 
     const rightHalf=0;                           // connect to Parameters later
-    const toCol = BigInt(0b11011011); 
+    const toCol = BigInt(0b110101101011); 
     const binNo = toCol.toString(2);             // connect to Parameters later
 
     const bitlength = toCol.toString(2).length;  // dynamic bitmask generation for 1/2 of length of parameter (future)
     const bithalf = Math.floor(bitlength/2);
     const bitmask = (1 << bithalf) - 1;
 
-    const column = toCol & BigInt(bitmask);
+    const outCol = toCol & BigInt(bitmask);
     console.log('column', column.toString(2).padStart(bithalf,'0'))
 
-    if( column <= BigInt(2)**BigInt(bithalf)-BigInt(1) ){   // double checking if column is 1/2 of length of number, using the binary length
+    if( outCol <= BigInt(2)**BigInt(bithalf)-BigInt(1) ){   // double checking if column is 1/2 of length of number, using the binary length
 
         if( debug == true ){
             console.log(`==================================`);
@@ -80,7 +80,7 @@ function reCol(BigIn=0, debug = true){
         console.log(`==================================`);
         console.log(`reCol DEBUG: Original: ${bin.toString(2)}`);
         console.log(`reCol DEBUG: theMask: ${bitmask.toString(2)}`);
-        console.log(`reCol DEBUG: appMask: ${column.toString(2).padStart(bithalf,'0')} `);
+        console.log(`reCol DEBUG: appMask: ${outCol.toString(2).padStart(bithalf,'0')} `);
         console.log(`reCol DEBUG: ${typeof bin}, ${bin}`);   
 
     };
@@ -94,15 +94,36 @@ function reCol(BigIn=0, debug = true){
 //     return BigInt(0b0111)     // Should return a BigInt that ix RxC where the length of R and C in string are equivalent
 // }
 
-function genMap(){           // N should be the parameter - for size of grid
-                             // For 2D, N bits should be (XbyY):
-                                  //  Square:  NxN
-                                  //  Rectangular: (N-a)x(N-b)
-                             // For 2D w/ a heightmap (3D): 
-                                  //  Rectangular: (N-a)x(N-b)x(N-c) where a is X, b is Y, and C is heightmap
+
+
+// N should be the parameter - for size of grid
+    // For 2D, N bits should be (XbyY):
+    //  Square:  NxN
+    //  Rectangular: (N-a)x(N-b)
+// For 2D w/ a heightmap (3D): 
+    //  Rectangular: (N-a)x(N-b)x(N-c) where a is X, b is Y, and C is heightmap
+function genMap(N, ... args){
+    
+    const inSum = args.recuce((accum, currVal)=>(accum+currVal))
+    if ( !(N === inSum)){
+        return 'Error: genMap did not proceed with tile generation (N != sum of args).'
+    } else if ( !(N%args.length === 0) ){
+        return 'Error: genMap not divisible by number of args.  Space usage not maximized.'
+    }
+
+    // When args === 2, then create an X by Y tilemap
+
+
+
+    // When args > 2, then create an X by Y by Z (height) tilemap
+
+
+
 
     return 'Returns a Map'    // Should return a Map using genId's for keys
 }
+
+
 
 function genIds(){
 
