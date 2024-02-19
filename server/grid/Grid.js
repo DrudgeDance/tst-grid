@@ -104,7 +104,8 @@ function reCol(BigIn=0, debug = true){
     //  Rectangular: (N-a)x(N-b)x(N-c) where a is X, b is Y, and C is heightmap
 function genMap(N, ... args){
     
-    const inSum = args.recuce((accum, currVal)=>(accum+currVal))
+    const inSum = args.reduce((accum, currVal)=>(accum+currVal));
+
     if ( !(N === inSum)){
         return 'Error: genMap did not proceed with tile generation (N != sum of args).'
     } else if ( !(N%args.length === 0) ){
